@@ -24,6 +24,14 @@ namespace TaskManagerCli.Domain
             IsDone = false;
         }
 
+        internal TodoTask(Guid id, string title, bool isDone, DateTime createdAt)
+        {
+            Title = NormalizeAndvalidateTitle(title);
+            Id = id;
+            CreatedAt = createdAt;
+            IsDone = isDone;
+        }
+
         public void MarkDone()
         {
             IsDone = true;

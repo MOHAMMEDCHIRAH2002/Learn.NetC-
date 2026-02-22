@@ -2,7 +2,7 @@
 using TaskManagerCli.Domain;
 using TaskManagerCli.Infrastructure;
 
-var repository = new InMemoryTaskRepository();
+var repository = new JsonFIleTaskRepository("tasks.json");
 var service=new TaskService(repository);
 
 var t1 = service.CreateTask("Learn C# properly");
